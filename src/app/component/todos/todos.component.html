@@ -1,0 +1,16 @@
+<ul>
+    <li *ngFor="let td of Todo">
+        <span>
+            <input type="checkbox" [checked]="td.isCompleted" (change)="changeTodoStatus(td)">
+        </span>
+        <span [class.completeTodo]="td.isCompleted">
+           {{td.name}}
+        </span>
+        <span [class.completeTodo]="td.isCompleted">
+            {{td.date | date}}
+        </span>
+        <span id="delete" (click)="deleteTodo(td)">
+            🗑️
+        </span>
+    </li>
+</ul>
